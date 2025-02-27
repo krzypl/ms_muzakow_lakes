@@ -61,6 +61,8 @@ dend <- dend %>%
 
 plot(dend)
 
+source("CHCriterion.R")
+
 criteria <- CHCriterion(data = df_muzakow_ilr_z, kmax = 10, clustermethod = "hclust", method = "ward.D2") #shows two popular indices that help selecting optimal number of clusters
 
 criteria$plot #at the left plot showing Calinski-Harabasz Index we look for the largest number, while at the right we seek for "elbow". Right plot is not very helpful here. C-H index suggests solution with 6 clusters

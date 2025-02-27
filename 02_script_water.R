@@ -82,7 +82,23 @@ te_pca_plot <- ggplot() +
         panel.grid.major = element_line(color = "grey80", linewidth = 0.2)) +
 #  guides(color = guide_legend(title = "pH")) +
   coord_equal() +
-  theme(legend.position = "right")
+  theme(legend.position = "right") +
+  labs(color = "pH",
+       shape = "Layer")
+
+ggsave(filename="figures/te.svg", 
+       plot = te_pca_plot, 
+       device = svg, 
+       width = 6, 
+       height = 4, 
+       units = "in")
+
+ggsave(filename="figures/te.jpeg", 
+       plot = te_pca_plot, 
+       device = jpeg, 
+       width = 6, 
+       height = 4, 
+       units = "in")
 
 #ree data preparation------
 ree_raw <- read_excel("data/LM_woda_statytyska.xlsx", sheet = "REE_1") %>% 
@@ -157,6 +173,20 @@ ree_pca_plot <- ggplot() +
         panel.grid.major = element_line(color = "grey80", linewidth = 0.2)) +
   #  guides(color = guide_legend(title = "pH")) +
   coord_equal() +
-  theme(legend.position = "right")
+  theme(legend.position = "right") +
+  labs(color = "pH",
+       shape = "Layer")
 
+ggsave(filename="figures/ree.svg", 
+       plot = ree_pca_plot, 
+       device = svg, 
+       width = 6, 
+       height = 4, 
+       units = "in")
 
+ggsave(filename="figures/ree.jpeg", 
+       plot = ree_pca_plot, 
+       device = jpeg, 
+       width = 6, 
+       height = 4, 
+       units = "in")
